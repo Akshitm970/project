@@ -19,10 +19,10 @@ public class Intersection {
 
     }
     public static void comman(int[] arr,int[] arr2){
-        for(int i = 0;i<arr.length;i++){
-            for(int j = 0;j<arr2.length;j++){
-                if(arr[i] == arr2[j]){
-                    System.out.println(arr[i]);
+        for (int k : arr) {
+            for (int i : arr2) {
+                if (k == i) {
+                    System.out.println(k);
                 }
             }
         }

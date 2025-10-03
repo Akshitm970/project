@@ -15,9 +15,9 @@ public class sort {
     public static void main(String[] args) {
         int[] arr = {5,4,3,2,1};
         sorting(arr);
-        for (int idx = 0; idx < arr.length; idx++) {
-            System.out.println(arr[idx]);
-            
+        for (int i : arr) {
+            System.out.println(i);
+
         }
     }
 
