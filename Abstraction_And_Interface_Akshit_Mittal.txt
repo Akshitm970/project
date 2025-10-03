@@ -1,0 +1,489 @@
+ 
+1.Write an abstract class Shape with an abstract method area() and implement it in Circle and Rectangle classes.
+
+
+package AbstractionAndInterface;
+
+public class CircleAndRectangle {
+    public static void main(String[] args) {
+        shape s = new Circle(4);
+        shape r = new Rectangle(4,5);
+        s.area();
+        r.area();
+    }
+}
+abstract class shape{
+    public abstract void area();
+}
+class Circle extends shape{
+    int r;
+    Circle(int r){
+        this.r = r;
+    }
+    @Override
+    public void area() {
+
+        System.out.println("Area of Circle"+(r*r*Math.PI));
+    }
+}
+class Rectangle extends shape{
+    int l;
+    int h;
+    Rectangle(int l,int h){
+        this.l = l;
+        this.h = h;
+    }
+    @Override
+    public void area() {
+
+        System.out.println("Area of Rectangle"+(l*h));
+    }
+}
+
+
+2.Create an interface Animal with method sound() and implement it in Dog and Cat classes.
+
+
+package AbstractionAndInterface.question2;
+
+public interface Animal {
+
+    void sound();
+}
+
+
+public class Cat implements Animal {
+    @Override
+    public void sound() {
+        System.out.println("Cat sound is meow");
+    }
+}
+package AbstractionAndInterface.question2;
+
+public class Dog implements Animal {
+    private String name;
+
+    @Override
+    public void sound() {
+        System.out.println("Sound of dog is wfff");
+    }
+}
+
+
+
+package AbstractionAndInterface.question2;
+
+public class mai {
+    public static void main(String[] args) {
+        Dog dog = new Dog();
+        dog.sound();
+        Animal a = new Dog();
+        a.sound();
+        Cat cat = new Cat();
+        cat.sound();
+        Animal c = new Cat();
+        c.sound();
+    }
+    }
+
+
+
+
+
+3.Create an interface Vehicle with method startEngine() and implement it in Car and Bike classes.
+
+
+package AbstractionAndInterface.question3;
+
+public interface Vehicle {
+    void startEngine();
+
+}
+
+
+
+package AbstractionAndInterface.question3;
+
+public class Bike implements Vehicle {
+    public void startEngine() {
+        System.out.println("Bike starting");
+    }
+}
+
+
+
+package AbstractionAndInterface.question3;
+
+public class Car implements Vehicle {
+    public void startEngine() {
+        System.out.println("Car starting");
+    }
+}
+
+
+package AbstractionAndInterface.question3;
+
+import oops.Vehi;
+
+public class main {
+    public static void main(String[] args) {
+        Vehicle car = new Car();
+        car.startEngine();
+        Vehicle bike = new Bike();
+        bike.startEngine();
+    }
+}
+
+
+
+
+4.Define an abstract class Employee with fields name and salary, and extend it with Manager and Developer. Implement a method to calculate bonus differently in each subclass.
+
+
+package AbstractionAndInterface.question4;
+
+public class Developer extends Employee {
+    Developer(String name, int salary) {
+        super(name, salary);
+    }
+    @Override
+    public void bonus() {
+        int total = salary + 500;
+        System.out.println("Bonus Salary"+total);
+    }
+}
+
+
+
+package AbstractionAndInterface.question4;
+
+abstract class Employee {
+    String name;
+    int salary;
+    Employee(String name, int salary) {
+        this.name = name;
+        this.salary = salary;
+    }
+    public abstract void bonus();
+
+
+}
+
+
+package AbstractionAndInterface.question4;
+
+public class main {
+    public static void main(String[] args) {
+        Employee e1 = new Manager("Akshit",100);
+        Employee e2 = new Developer("Bob",50);
+
+        e1.bonus();
+        e2.bonus();
+
+    }
+}
+
+
+
+package AbstractionAndInterface.question4;
+
+class Manager extends Employee {
+    int salary;
+    Manager(String name,int salary){
+        super(name,salary);
+    }
+    @Override
+    public void bonus() {
+        salary = salary+100;
+        System.out.println("Manager Salary"+salary);
+    }
+
+}
+
+5.Create an interface Payment with method pay(). Implement it for CreditCardPayment and UPIPayment.
+
+
+package AbstractionAndInterface.question5;
+
+public interface Payment {
+    void pay();
+}
+
+
+package AbstractionAndInterface.question5;
+
+public class CreditCardPayment implements Payment {
+    @Override
+    public void pay(){
+        System.out.println("The Credit card is ready to use");
+    }
+}
+
+
+
+package AbstractionAndInterface.question5;
+
+public class main {
+    public static void main(String[] args) {
+        CreditCardPayment p = new CreditCardPayment();
+        UPIPayment p1 = new UPIPayment();
+        p.pay();
+        p1.pay();
+    }
+
+}
+
+
+
+package AbstractionAndInterface.question5;
+
+public class UPIPayment implements Payment {
+    @Override
+    public void pay() {
+        System.out.println("The upi is ready to use");
+    }
+}
+
+
+
+
+
+6.Write an interface DatabaseOperations with methods connect(), disconnect(), and executeQuery(). Implement it for MySQLDatabase and OracleDatabase.
+
+
+package AbstractionAndInterface.question6;
+
+public interface DatabaseOperations {
+    void connect();
+    void disconnect();
+    void executeQuery();
+}
+
+
+
+package AbstractionAndInterface.question6;
+
+public class MySQLDatabase implements DatabaseOperations{
+
+    @Override
+    public void connect() {
+        System.out.println("MySQL Database connect is executed");
+    }
+
+    @Override
+    public void disconnect() {
+        System.out.println("MySQL Database disconnect is executed");
+    }
+
+    @Override
+    public void executeQuery() {
+        System.out.println("MySQL Database query is executed");
+    }
+}
+
+
+
+package AbstractionAndInterface.question6;
+
+public class OracleDatabase implements DatabaseOperations{
+
+    @Override
+    public void connect() {
+        System.out.println("Oracle Database connecting");
+    }
+
+    @Override
+    public void disconnect() {
+        System.out.println("Oracle Database disconnecting");
+    }
+
+    @Override
+    public void executeQuery() {
+        System.out.println("Oracle Database query is executed");
+    }
+}
+
+
+
+7.Create an abstract class BankAccount with abstract methods deposit() and withdraw(). Implement it in SavingsAccount and CurrentAccount.
+
+
+package AbstractionAndInterface.question7;
+
+public abstract class BankAccount {
+    public abstract void deposit();
+    public abstract void withdraw();
+}
+ class SavingAccount extends BankAccount {
+
+     @Override
+     public void deposit() {
+         System.out.println("The amount was deposited in the SavingAccount");
+     }
+
+     @Override
+     public void withdraw() {
+         System.out.println("The amount withdrawn from SavingAccount");
+     }
+ }
+
+class CurrentAccount extends BankAccount {
+
+    @Override
+    public void deposit() {
+        System.out.println("The amount was deposited in the CurrentAccount");
+    }
+
+    @Override
+    public void withdraw() {
+        System.out.println("The amount withdrawn from CurrentAccount");
+    }
+}
+
+package AbstractionAndInterface.question7;
+
+public class mai {
+    public static void main(String[] args) {
+        SavingAccount b = new SavingAccount();
+
+        BankAccount b1 = new CurrentAccount();
+
+        b.withdraw();
+        b1.deposit();
+        b.deposit();
+        b1.withdraw();
+
+    }
+}
+
+
+8.Define an interface NotificationService with method sendNotification(). Implement it for EmailNotification and SMSNotification.
+
+
+package AbstractionAndInterface.question8;
+
+public interface NotificationService {
+    void sendNotification();
+
+}
+
+
+package AbstractionAndInterface.question8;
+
+public class EmailNotification implements NotificationService {
+    @Override
+    public void sendNotification() {
+        System.out.println("Email Notification");
+    }
+}
+
+
+package AbstractionAndInterface.question8;
+
+import javax.management.Notification;
+
+public class mai {
+    public static void main(String[] args) {
+        SMSNotification notification = new SMSNotification();
+        notification.sendNotification();
+        EmailNotification e = new EmailNotification();
+        e.sendNotification();
+    }
+}
+
+
+package AbstractionAndInterface.question8;
+
+public class SMSNotification implements NotificationService {
+
+    @Override
+    public void sendNotification() {
+        System.out.println("SMS Notification");
+    }
+}
+
+9.Write an interface Playable with method play(). Implement it in Football and Cricket classes. Use polymorphism to call methods dynamically.
+
+
+package AbstractionAndInterface.question9;
+
+public interface Playable {
+    void play();
+
+}
+
+
+package AbstractionAndInterface.question9;
+
+public class Cricket implements Playable {
+    @Override
+    public void play(){
+        System.out.println("Cricket");
+    }
+}
+package AbstractionAndInterface.question9;
+
+public class Football implements Playable {
+    @Override
+    public void play() {
+        System.out.println("Football");
+    }
+}
+
+
+package AbstractionAndInterface.question9;
+
+public class mai {
+    public static void main(String[] args) {
+
+
+        Playable p;
+        p = new Football();
+        p.play();
+        p = new Cricket();
+        p.play();
+    }
+}
+
+
+10.Create an interface Printer with method print(). Implement InkjetPrinter and LaserPrinter.
+
+
+package AbstractionAndInterface.question10;
+
+public interface Printer {
+    void print();
+
+}
+
+
+
+package AbstractionAndInterface.question10;
+
+public class InkjetPrinter implements Printer {
+    @Override
+    public void print(){
+        System.out.println("InkjetPrinter");
+    }
+}
+package AbstractionAndInterface.question10;
+
+public class LaserPrinter implements Printer {
+    @Override
+    public void print() {
+        System.out.println("LaserPrinter");
+    }
+}
+
+
+
+package AbstractionAndInterface.question10;
+
+public class mai {
+    public static void main(String[] args) {
+        InkjetPrinter i = new InkjetPrinter();
+        i.print();
+        LaserPrinter l = new LaserPrinter();
+        l.print();
+    }
+}

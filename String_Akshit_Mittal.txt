@@ -1,0 +1,248 @@
+1.Reverse a string.
+
+public class reversestring {
+    public static void main(String[] args) {
+        String s = "Infinite";
+        String k = "";
+        for(int i = s.length()-1;i>0;i--){
+            k += s.charAt(i);
+        }
+        System.out.println(k);
+    }
+}
+
+
+2.Check if a string is a palindrome.
+
+
+public class Palindrome {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String a = "naman";
+        String b = "akshit";
+        System.out.println(palind(a));
+        System.out.println(palind(b));
+    }
+    public static boolean palind(String a){
+        String s = "";
+        for(int i = a.length()-1;i>=0;i--){
+            s+=a.charAt(i);
+        }
+        return a.equals(s);
+    }
+
+}
+
+
+3.Count the number of vowels and consonants in a string.
+
+
+public class vowelsConsonants {
+    public static void main(String[] args) {
+        String s = "akshit";
+        s.toLowerCase();
+        int vowels = 0;
+        int consonants = 0;
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i)=='a'||s.charAt(i)=='o'||s.charAt(i)=='i'||s.charAt(i)=='e'||s.charAt(i)=='u'){
+                vowels++;
+            }else{
+                consonants++;
+            }
+        }
+        System.out.println("Vowels : "+vowels);
+        System.out.println("Consonants : "+consonants);
+    }
+}
+
+
+4.Remove duplicate characters from a string.
+
+
+public class removeduplicate {
+    public static void main(String[] args) {
+        String s = "Akshit Mittal";
+        HashSet<Character> l = new HashSet<>();
+        for (int i = 0; i < s.length(); i++) {
+            l.add(s.charAt(i));   
+        }
+        System.out.println(l);
+    }
+}
+
+
+
+
+5.Convert a string to uppercase/lowercase without using built-in functions.
+
+
+public class UpperLower {
+    public static void main(String args[]){
+        String s = "Akshit";
+        String upper = tou(s);
+        String lower = tol(s);
+        
+        System.out.println(upper);
+        System.out.println(lower);
+    }
+    public static String tou(String s) {
+        String upper = "";
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i)>=65 && s.charAt(i)<=90){
+                upper += s.charAt(i);
+                continue;
+            }else{
+               char a = (char)(s.charAt(i)-32);
+               upper += a;
+            }
+        }
+        return upper;
+    }
+    public static String tol(String s) {
+        String lower = "";
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i)>=97 && s.charAt(i)<=122){
+                lower += s.charAt(i);
+                continue;
+            }else{
+               char a = (char)(s.charAt(i)+32);
+               lower += a;
+            }
+        }
+        return lower;
+    }
+}
+
+
+
+
+6.Count the number of words in a string.
+
+public class count {
+    public static void main(String[] args) {
+        String s = "Akshit what are you doing";
+        int co = 0;
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i) != ' '){
+                co++;
+            }
+        }
+        System.out.println(co);
+    }
+
+}
+
+
+7.Find the length of the longest word in a sentence.
+
+
+public class longestLength {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String s = "Hello Akshit What are you doing";
+        System.out.println(cot(s));
+    }
+    public static int cot(String s) {
+        int count = 0;
+        int l = s.length();
+        int start = 0;
+        int end = 0;
+        int ml = 0;
+        int max = 0;
+        while(end<l){
+            if(s.charAt(end) != ' ')
+            {
+                end++;
+            }else{
+                ml = end-start;
+                start = end+1;
+                end++;
+            }
+            max = Math.max(max, ml);
+        }
+        count = max;
+        return count;
+    }
+
+}
+
+
+
+8.Check if a string contains only digits.
+
+
+class ifContainsDigit{
+    public static void main(String[] args){
+        String s = "123a33";
+        System.out.println(contains(s));
+        
+    }
+    public static boolean contains(String s){
+        for(int i = 0;i<s.length();i++){
+            char a = s.charAt(i);
+           if(!Character.isDigit(a)){
+                return false;
+            }
+        }
+        return true;
+    }
+}
+
+
+9.Remove all white spaces from a string.
+
+
+public class removespace {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        String s = "Hello Akshit What are you doing";
+        String a ="";
+        for(int i = 0;i<s.length();i++){
+            if(s.charAt(i) != ' '){
+                a+=s.charAt(i);
+            }
+        }
+        System.out.println(a);
+    }
+
+}
+
+
+10.Count the frequency of each character in a string.
+
+public class frequency {
+
+    
+    public static void main(String[] args) {
+        // TODO code application logic here
+        String s = "Hello Akshit What are you doing";
+        int[] arr = new int[26]; 
+
+        for (int i = 0; i < s.length(); i++) {
+            char currentChar = s.charAt(i);
+           
+            if (Character.isLetter(currentChar)) {
+                int index = Character.toLowerCase(currentChar) - 'a'; 
+                if (index >= 0 && index < 26) { 
+                    arr[index]++;
+                }
+            }
+        }
+
+        for (int i = 0; i < 26; i++) {
+            if (arr[i] > 0) { 
+                System.out.println((char) ('a' + i) + ": " + arr[i]);
+            }
+        }
+    }
+}

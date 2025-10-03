@@ -1,0 +1,13 @@
+// Overloading (compile-time)
+class MathUtil {
+    int add(int a, int b) { return a + b; }
+    double add(double a, double b) { return a + b; }
+}
+
+// Overriding (runtime)
+class Animal {
+    void sound() { System.out.println("Some sound"); }
+}
+class Dog extends Animal {
+    void sound() { System.out.println("Bark"); }
+}

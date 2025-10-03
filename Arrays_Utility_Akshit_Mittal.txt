@@ -1,0 +1,181 @@
+1.Arrays.equals(a, b):
+Write a program to check whether two integer arrays {1, 2, 3} and {1, 2, 3} are equal.
+
+
+package ArrayUtilities;
+import java.util.*;
+
+public class Equals1{
+    public static void main(String[] args){
+        int[] arr1 = {1,2,3};
+        int[] arr2 = {1,2,3};
+        System.out.println(Arrays.equals(arr1,arr2));
+
+    }
+    
+}
+
+
+2.Arrays.deepEquals(a, b):
+Write a program to compare two 2D integer arrays:
+{{1, 2}, {3, 4}} and {{1, 2}, {3, 4}} using Arrays.deepEquals().
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class deepEquals2 {
+    public static void main(String[] args) {
+        int[][] arr = {{1,2},{3,4}};
+        int[][] arr2 = {{1,2},{3,4}};
+        System.out.println(Arrays.deepEquals(arr, arr2));
+    }
+}
+
+
+
+3.Arrays.compare(a, b):
+Write a program to lexicographically compare two arrays {1, 5, 3} and {1, 2, 9} and print the comparison result.
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class lexicographicallycompare3 {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 5, 3};
+        int[] arr2 =  {1, 2, 9};
+        System.out.println(Arrays.compare(arr1, arr2));
+    }
+}
+
+
+
+4.Arrays.sort(a):
+Write a program to sort the array {5, 1, 4, 2, 3} in ascending order using Arrays.sort()..
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class arraysort4 {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 5, 3};
+//        int[] arr2 =  {1, 2, 9};
+        Arrays.sort(arr1);
+        System.out.println(Arrays.toString(arr1));
+    }
+}
+
+
+5️.Arrays.fill(a, value):
+Write a program to fill an integer array of length 5 with the number 7 using Arrays.fill().
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class arrayfill5 {
+    public static void main(String[] args) {
+        int[] arr1 = new int[5];
+        Arrays.fill(arr1,7);
+        System.out.println(Arrays.toString(arr1));
+    }
+}
+
+
+
+6️.Arrays.copyOf(a, length):
+Write a program to copy the array {10, 20, 30} into a new array of length 5, and print the new array.
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class arraycopy6 {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30} ;
+        int[] arr2 = new int[arr.length];
+
+        arr2 = Arrays.copyOf(arr,arr.length);
+        System.out.println(Arrays.toString(arr2));
+
+    }
+}
+
+
+
+7️.Arrays.binarySearch(a, key):
+Write a program to perform binary search on a sorted array {1, 3, 5, 7, 9} to find the index of element. 
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class arraysbinarysearch7 {
+    public static void main(String[] args) {
+        int[] arr1 = {1, 3, 5, 7, 9};
+        System.out.println(Arrays.binarySearch(arr1,3));
+    }
+}
+
+
+8.Arrays.mismatch(a, b):
+Write a program to find the first index where the two arrays {1, 2, 3, 4} and {1, 2, 5, 4} differ.
+
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+
+public class arraysmismatch8 {
+    public static void main(String[] args) {
+        int[] arr =  {1, 2, 3, 4};
+        int[] arr2 = {1, 2, 5, 6};
+        int a = Arrays.mismatch(arr,arr2);
+        System.out.println(a);
+    }
+}
+
+
+9.Arrays.asList(a):
+Write a program to convert an array of strings {"Apple", "Banana", "Cherry"} into a List<String> and print the list.
+
+
+package ArrayUtilities;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+public class arrayslist9 {
+    public static void main(String[] args) {
+        String[] arr = {"Apple", "Banana", "Cherry"};
+        List<String> list = new ArrayList<String>();
+        list = Arrays.asList(arr);
+        System.out.println(list);
+    }
+}
+
+
+10.Arrays.toString(a):
+Write a program to print an integer array {10, 20, 30, 40} as a string using Arrays.toString().
+
+package ArrayUtilities;
+
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+
+public class arraystostring10 {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40};
+        System.out.println(Arrays.toString(arr));
+
+    }
+}
