@@ -1,8 +1,6 @@
 package AbstractionAndInterface.question3;
 
-import oops.Vehi;
-
-public class main {
+public class main1 {
     public static void main(String[] args) {
         Vehicle car = new Car();
         car.startEngine();

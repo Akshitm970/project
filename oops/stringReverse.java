@@ -15,7 +15,7 @@ public class stringReverse {
             System.out.print(stack.pop());
         }
         System.out.println();
-        System.out.println(stack.size());
+//        System.out.println(stack.size());
 
     }
 }
